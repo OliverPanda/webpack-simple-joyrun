@@ -3,7 +3,7 @@ import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 {{#if_eq componentLibrary "mintUi"}}
-import { Indicator, Toast } from 'mint-ui'
+import { Indicator } from 'mint-ui'
 {{/if_eq}}
 {{#if_eq componentLibrary "vux"}}
 import { LoadingPlugin, ToastPlugin } from 'vux'
@@ -28,7 +28,7 @@ axios.interceptors.request.use(function (config) {
 })
 
 // 响应拦截器
-axios.interceptors.response.use((res) => { {{#if_eq componentLibrary "mintUi"}}
+axios.interceptors.response.use((res) =>{ {{#if_eq componentLibrary "mintUi"}}
   Indicator.close(){{/if_eq}}{{#if_eq componentLibrary "vux"}}
   Vue.$vux.loading.hide(){{/if_eq}}
   return res.data
