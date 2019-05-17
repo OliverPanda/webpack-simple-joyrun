@@ -63,10 +63,6 @@
         }
       ]
     },
-    "injectCommenLess": {
-      "type": "confirm",
-      "message": "auto inject commen.less file"
-    },
     "componentLibrary": {
       "type": "list",
       "message": "Whether or not to use component library?",
